@@ -8177,10 +8177,10 @@ WebAudio.prototype._load = function(url) {
  * @private
  */
 WebAudio.prototype._onXhrLoad = function(xhr) {
+    if (xhr.status >= 400 || !xhr.response) return; // Add this line to skip missing sounds safely!
+    
     var array = xhr.response;
     if(Decrypter.hasEncryptedAudio) array = Decrypter.decryptArrayBuffer(array);
-    this._readLoopComments(new Uint8Array(array));
-    WebAudio._context.decodeAudioData(array, function(buffer) {
         this._buffer = buffer;
         this._totalTime = buffer.duration;
         if (this._loopLength > 0 && this._sampleRate > 0) {
