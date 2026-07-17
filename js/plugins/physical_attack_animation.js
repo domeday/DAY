@@ -55,9 +55,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */ 
 
 (function() { 
-var parameters = PluginManager.parameters('CC_physicalattacks'); 
-var phys_weap = eval(String(parameters)); 
-var types_weap = String(parameters).split(' '); 
+var parameters = PluginManager.parameters('CC_physicalattacks');
+var phys_weap = parameters['Physical Weapon Types'] || parameters['phys_weap'] || "";
+var types_weap = String(phys_weap).split(' ');
 for(var i=0;i<types_weap.length;i++) { 
 types_weap = parseInt(types_weap); 
 } 
