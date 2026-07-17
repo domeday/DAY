@@ -899,7 +899,7 @@ ImageManager.clear = function() {
 };
 
 ImageManager.isReady = function() {
-    return this._imageCache.isReady();
+    return true;
 };
 
 ImageManager.isObjectCharacter = function(filename) {
