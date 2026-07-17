@@ -1679,7 +1679,7 @@ Bitmap.prototype._requestImage = function(url){
     this._url = url;
     this._loadingState = 'requesting';
 
-    if(!Decrypter.checkImgIgnore(url) && Decrypter.hasEncryptedImages) {
+    if(!Decrypter.checkImgIgnore(url) && false) {
         this._loadingState = 'decrypting';
         Decrypter.decryptImg(url, this);
     } else {
