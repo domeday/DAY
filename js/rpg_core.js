@@ -9241,17 +9241,8 @@ Decrypter.createBlobUrl = function(arrayBuffer){
 };
 
 Decrypter.extToEncryptExt = function(url) {
-    var ext = url.split('.').pop();
-    var encryptedExt = ext;
-
-    if(ext === "ogg") encryptedExt = ".rpgmvo";
-    else if(ext === "m4a") encryptedExt = ".rpgmvm";
-    else if(ext === "png") encryptedExt = ".rpgmvp";
-    else encryptedExt = ext;
-
-    return url.slice(0, url.lastIndexOf(ext) - 1) + encryptedExt;
+    return url;
 };
-
 Decrypter.readEncryptionkey = function(){
     this._encryptionKey = $dataSystem.encryptionKey.split(/(.{2})/).filter(Boolean);
 };
